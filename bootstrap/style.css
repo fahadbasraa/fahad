@@ -1,0 +1,504 @@
+body {
+    background-color: #fafafa;
+}
+
+.navbar {
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    color: #0E5AA7;
+    display: flex;
+    align-items: center;
+}
+
+.navlogo img {
+    height: 80px;
+    width: 160px;
+}
+
+.navsearch {
+    height: 45px;
+    width: 730px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.location i {
+    margin-right: 8px;
+}
+
+.para p {
+    margin: 0;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.flag {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.flag i {
+    margin-right: 8px;
+}
+
+.cart {
+    margin-left: 40px;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    
+}
+
+.navbar2 {
+    display: flex;
+    padding: 10px 30px;
+    background-color: white;
+    font-size: 16px;
+}
+
+.navbar2 a {
+    text-decoration: none;
+    margin-right: 30px;
+    color: #0E5AA7;
+    padding: 10px;
+}
+
+.navbar2 a:hover {
+    text-decoration: underline;
+}
+.content {
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 40px;
+}
+
+.discount {
+    height: 56px;
+width: 1500px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 10px 20px;
+    max-width: 100%;
+}
+
+.img {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imglogo {
+    height: 36px;
+    width: 36px;
+    background-image: url('1.webp'); /* Image link added */
+    background-size: cover;
+    background-position: center;
+}
+
+.para3 {
+    flex-grow: 1;
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon2 {
+    font-size: 20px;
+    color: #0E5AA7;
+    display: flex;
+    align-items: center;
+}
+.card{
+    border-radius: 15px;
+     overflow: hidden;
+}
+.category-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background-size: cover;
+    position: relative; /* For positioning the text */
+}
+.category-text {
+    position: absolute;
+    bottom:-50px; /* Adjusts the text position */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Text color for visibility */
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    color: black; /* Adjust font size */
+
+}
+.hero-image {
+    background-image: url("hero.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 283px;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+.heading{
+    position: relative;
+    left: -38%;
+    top: 10px;
+}
+.container3 {
+    height: 392px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.p1 {
+    height: 392px;
+    width: 240px; /* Keep the width fixed */
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.heading1 {
+    margin-top: 10px;
+}
+
+.f {
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sales {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping of sale items */
+}
+
+.sale {
+    height: 275px;
+    width: 210px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 2px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Align child elements vertically */
+    justify-content: space-between; /* Add space between elements */
+}
+
+.tasveer {
+    width: 100%;
+    height: 156px;
+    background-color: #f5f5f5;
+    margin: 2px;
+    background-size: cover;
+    background-position: center;
+}
+
+.price {
+    margin-left: 10px;
+    display: flex;
+    align-items: center; /* Aligns price text vertically */
+}
+
+.pr1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.dec {
+    display: flex;
+    align-items: center; /* Aligns decimals vertically */
+}
+
+.pkr {
+    margin-left: 1px;
+    font-size: 14px;
+}
+
+.pk {
+    font-size: 14px;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers button horizontally */
+}
+
+.icont {
+    width: 35px;
+    font-size: 35px;
+    text-align: center; /* Centers icon within button */
+    color: #0E5AA7;
+}
+
+.dis {
+    margin-left: 15px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+.tasveer {
+    background-size: cover;
+    background-position: center;
+}
+#p2 {
+    background-image: url("images.png");
+    background-size: cover;
+}
+#p3 {
+    background-image: url("images\ \(2\).png");
+    background-size: cover;
+}
+#p4 {
+    background-image: url("images.png");
+    background-size: cover;
+}
+#p5 {
+    background-image: url("images4.jpeg");
+    background-size: cover;
+}
+#p6 {
+    background-image: url("images.png");
+    background-size: cover;
+}
+.f {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#z1 {
+    background-image: url("t1-ezgif.com-avif-to-webp-converter.webp");
+    background-size: cover;
+}
+
+#z2 {
+    background-image: url("t2-ezgif.com-avif-to-webp-converter.webp");
+    background-size: cover;
+}
+
+#z3 {
+    background-image: url("t3-ezgif.com-avif-to-webp-converter.webp");
+    background-size: cover;
+}
+
+#z4 {
+    background-image: url("t4-ezgif.com-avif-to-webp-converter.webp");
+    background-size: cover;
+}
+
+#z5 {
+    background-image: url("t5-ezgif.com-avif-to-webp-converter.webp");
+    background-size: cover;
+}
+
+#z6 {
+    background-image: url("t6-ezgif.com-avif-to-webp-converter.webp");
+    background-size: cover;
+}
+
+#z7 {
+    background-image: url("t7-ezgif.com-avif-to-webp-converter.webp");
+    background-size: cover;
+}
+.button {
+    width: 156px;
+    height: 32px;
+    position: relative;
+    top: 130px;
+}
+footer {
+    margin: 0px;
+    padding: 0px;
+}
+
+.f1 {
+    height: 48.8px;
+    width: 1500px;
+    margin-left: 0px;
+    background-color: #0a437c;
+    margin-left: -160px;
+    cursor: pointer;
+}
+
+.f1 p {
+    left: 47%;
+    position: relative;
+    top: 15px;
+    margin-right: 50%;
+    color: #fafafa;
+}
+
+.f2 {
+    height: 303.3px;
+    width: 1500px;
+    background-color: #0E5AA7;
+    display: flex;
+    justify-content: space-around;
+    margin-left: -160px;
+}
+
+.f22 {
+    height: 228.8px;
+    width: 226px;
+    margin-left: 10px;
+
+}
+
+.lo {
+    background-image: url("images\ \(1\).png");
+    background-size: cover;
+    width: 142px;
+    height: 70px;
+    position: relative;
+    left: 35px;
+    mix-blend-mode: color-burn;
+}
+
+.in {
+    width: 124px;
+    height: 14.4px;
+    font-size: 13px;
+    position: relative;
+    left: 35px;
+    color: #eaeaea;
+}
+
+.ta {
+    display: flex;
+    height: 25px;
+    width: 160px;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.ta img {
+    position: relative;
+    left: 20px;
+    margin-top: 5px;
+    height: 25px;
+    width: 25px;
+    margin-left: 12px;
+}
+
+#customer {
+    margin-left: -150px;
+}
+
+#customer1 {
+    position: relative;
+    left: 10px;
+}
+
+#customer2 {
+    position: relative;
+    left: -10px;
+}
+
+#cus {
+    position: relative;
+    top: 10px;
+    left: 15px;
+    color: white;
+}
+
+#cusm {
+    padding: 0px;
+    margin-left: 0px;
+    height: 120px;
+    width: 226px;
+    margin-top: 30px;
+}
+
+#cusm a {
+    position: relative;
+    left: 5px;
+    color: white;
+    font-size: 12.5px;
+    display: block;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+#cusm a:hover {
+    text-decoration: underline;
+}
+
+#a12 {
+    margin-left: 40%;
+    font-size: small;
+    width: 200px;
+}
+
+#lastfooter {
+    height: 84px;
+    width: 1500px;
+    background-color: rgb(147, 87, 9);
+    margin-left: -160px;
+    margin-top: -10px;
+}
+
+#copyright {
+    position: relative;
+    top: -20%;
+    left: 78%;
+    color: white;
+    font-size: small;
+}
+
+#majidimg {
+    height: 52px;
+    width: 260px;
+}
+
+#mi {
+    height: 52px;
+    width: 260px;
+    background-image: url("Majid-ezgif.com-jpg-to-webp-converter.webp");
+    background-size: contain;
+    position: relative;
+    left: 120px;
+    top: 20px;
+
+}
+
+#majidimg p {
+    position: relative;
+    top: -50px;
+    left: 120px;
+    font-size: small;
+    color: white;
+}
