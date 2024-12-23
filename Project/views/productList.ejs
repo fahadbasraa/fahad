@@ -1,0 +1,87 @@
+<div class="container my-5">
+  <h1 class="mb-4">Product List</h1>
+
+  <!-- Search, Filter, and Sort Form -->
+  <form method="GET" action="/products" class="mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <input type="text" name="search" class="form-control" placeholder="Search by Name" value="<%= searchQuery %>" />
+      </div>
+      <div class="col-md-3">
+        <input type="number" name="minPrice" class="form-control" placeholder="Min Price" value="<%= minPrice %>" />
+      </div>
+      <div class="col-md-3">
+        <select name="sortBy" class="form-control">
+          <option value="name" <%= sortBy === 'name' ? 'selected' : '' %>>Sort by Name</option>
+          <option value="price" <%= sortBy === 'price' ? 'selected' : '' %>>Sort by Price</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select name="sortOrder" class="form-control">
+          <option value="asc" <%= sortOrder === 'asc' ? 'selected' : '' %>>Ascending</option>
+          <option value="desc" <%= sortOrder === 'desc' ? 'selected' : '' %>>Descending</option>
+        </select>
+      </div>
+      <div class="col-md-1">
+        <button type="submit" class="btn btn-primary w-100">Search</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Product Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.forEach((product, index) => { %>
+          <tr>
+            <td><%= index + 1 + ((page - 1) * 10) %></td>
+            <td>
+              <% if (product.picture) { %>
+                <img src="/<%= product.picture %>" alt="Product Picture" class="img-thumbnail" style="width: 50px; height: 50px;">
+              <% } else { %>
+                No Picture
+              <% } %>
+            </td>
+            <td><%= product.name %></td>
+            <td><%= product.category ? product.category.name : "No Category" %></td>
+            <td><%= product.price %></td>
+            <td><%= product.stock %></td>
+            <td>
+              <a href="/products/edit/<%= product._id %>" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/products/delete/<%= product._id %>" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-between">
+    <p>Page <%= page %> of <%= totalPages %></p>
+    <div>
+      <% if (page > 1) { %>
+        <a href="/products?page=<%= page - 1 %>&search=<%= searchQuery %>&minPrice=<%= minPrice %>&sortBy=<%= sortBy %>&sortOrder=<%= sortOrder %>" class="btn btn-secondary btn-sm">Previous</a>
+      <% } %>
+      <% if (page < totalPages) { %>
+        <a href="/products?page=<%= page + 1 %>&search=<%= searchQuery %>&minPrice=<%= minPrice %>&sortBy=<%= sortBy %>&sortOrder=<%= sortOrder %>" class="btn btn-secondary btn-sm">Next</a>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Add New Product Link -->
+  <div class="mt-4">
+    <a href="/products/create" class="btn btn-success">Add New Product</a>
+  </div>
+</div>

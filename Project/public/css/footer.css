@@ -1,0 +1,40 @@
+
+#lastfooter {
+    height: 84px;
+    width: 1500px;
+    background-color: #0E5AA7;
+    margin-left: -8px;
+    margin-top: -16px;
+}
+
+#copyright {
+    position: relative;
+    top: -20%;
+    left: 78%;
+    color: white;
+    font-size: small;
+}
+
+#majidimg {
+    height: 52px;
+    width: 260px;
+}
+
+#mi {
+    height: 52px;
+    width: 260px;
+    background-image: url("Majid-ezgif.com-jpg-to-webp-converter.webp");
+    background-size: contain;
+    position: relative;
+    left: 120px;
+    top: 20px;
+
+}
+
+#majidimg p {
+    position: relative;
+    top: 100px;
+    left: 120px;
+    font-size: small;
+    color: white;
+}

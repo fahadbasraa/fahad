@@ -1,0 +1,61 @@
+<div class="container my-4">
+  <h1 class="mb-4">Category List</h1>
+
+  <!-- Search Form -->
+  <form method="GET" action="/categories" class="mb-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex">
+        <input type="text" name="search" class="form-control" placeholder="Search by Name" value="<%= searchQuery %>" style="max-width: 300px;">
+        <button type="submit" class="btn btn-primary ms-2">Search</button>
+      </div>
+      <a href="/categories/create" class="btn btn-success">Add New Category</a>
+    </div>
+  </form>
+
+  <!-- Category Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% categories.forEach((category, index) => { %>
+          <tr>
+            <td><%= index + 1 + ((page - 1) * 10) %></td> <!-- Adjust index for pagination -->
+            <td>
+              <% if (category.picture) { %>
+                <img src="/<%= category.picture %>" alt="Category Picture" class="img-fluid" style="max-width: 50px; height: 50px;">
+              <% } else { %>
+                No Picture
+              <% } %>
+            </td>
+            <td><%= category.name %></td>
+            <td>
+              <a href="/categories/edit/<%= category._id %>" class="btn btn-warning btn-sm">Edit</a> 
+              <a href="/categories/delete/<%= category._id %>" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-between align-items-center">
+    <p>Page <%= page %> of <%= totalPages %></p>
+    <div>
+      <% if (page > 1) { %>
+        <a href="/categories?page=<%= page - 1 %>&search=<%= searchQuery %>" class="btn btn-secondary btn-sm">Previous</a>
+      <% } %>
+      <% if (page < totalPages) { %>
+        <a href="/categories?page=<%= page + 1 %>&search=<%= searchQuery %>" class="btn btn-secondary btn-sm ms-2">Next</a>
+      <% } %>
+    </div>
+  </div>
+
+</div>

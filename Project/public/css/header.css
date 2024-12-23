@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styles */
+  .bg-primary {
+    background-color: #007bff; /* Bootstrap's default primary color */
+  }
+  
+  .text-white {
+    color: #fff;
+  }
+  
+  .py-3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  /* Container Styles */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Navigation Styles */
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-between {
+    justify-content: space-between;
+  }
+  
+  .align-items-center {
+    align-items: center;
+  }
+  
+  .list-unstyled {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .ms-3 {
+    margin-left: 1rem;
+  }
+  
+  .text-decoration-none {
+    text-decoration: none;
+  }
+  
+  /* Responsive Styles (Optional) */
+  @media (max-width: 768px) {
+    /* Adjust styles for smaller screens if needed */
+  }

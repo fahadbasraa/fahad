@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+     <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column; /* Ensure vertical stacking of content */
+            min-height: 100vh;
+            }
+
+            main {
+            text-align: center;
+            padding: 20px; /* Add padding for better spacing */
+            }
+
+            h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            }
+
+            /* Card Styles */
+            .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            }
+
+            .card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .card h2 {
+            color: #34495e;
+            margin-bottom: 10px;
+            }
+
+            .card p {
+            color: #666;
+            margin-bottom: 20px;
+            }
+
+            .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            }
+
+            .btn:hover {
+            background-color: #2980b9;
+            }
+
+                </style> 
+</head>
+<body>
+    <main>
+        <h1>Welcome to the Admin Dashboard</h1>
+        <p>Manage your products and categories seamlessly from here.</p>
+        <div class="cards">
+            <div class="card">
+                <h2>Manage Products</h2>
+                <p>Add, update, and delete products efficiently.</p>
+                <a href="/products" class="btn">Go to Products</a>
+            </div>
+            <div class="card">
+                <h2>Manage Categories</h2>
+                <p>Add, update, and delete categories for your products.</p>
+                <a href="/categories" class="btn">Go to Categories</a>
+            </div>
+            <div class="card">
+                <h2>See My Website</h2>
+                <p>View your main website interface.</p>
+                <a href="/home" class="btn">Go to Home</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
