@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <style>
+        /* General reset for consistent styling */
+        body, h1, ul, li, p {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Main container for the cart */
+        .cart-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+        }
+
+        /* Heading */
+        .cart-container h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        /* List of cart items */
+        .cart-items {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Single cart item */
+        .cart-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            background-color: #ffffff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Hover effect for cart item */
+        .cart-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Item image */
+        .item-image img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+        }
+
+        /* Item details */
+        .item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Item name */
+        .item-name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        /* Price, quantity, and description */
+        .item-price, .item-quantity, .item-description {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+
+        /* Highlight price */
+        .item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* Total price for each item */
+        .item-total-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #16a085;
+            margin-top: 10px;
+        }
+
+        /* Empty cart message */
+        .empty-cart-message {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #bdc3c7;
+            margin-top: 30px;
+        }
+
+        /* Cart total section */
+        .cart-total {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .cart-total h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .cart-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .item-image img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .item-details {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart-container">
+        <h1>My Cart</h1>
+        <% if (cart.items.length > 0) { %>
+            <ul class="cart-items">
+                <% let totalPrice = 0; %> <!-- Initialize a variable to keep track of total price -->
+                <% cart.items.forEach(item => { %>
+                    <li class="cart-item">
+                        <div class="item-details">
+                            <h2 class="item-name"><%= item.product.name %></h2>
+                            <p class="item-price">Price: <%= item.product.price %> PKR</p>
+                            <p class="item-quantity">Quantity: <%= item.quantity %></p>
+                            <p class="item-description"><%= item.product.description %></p>
+                            
+                            <!-- Calculate total price for this item based on quantity -->
+                            <p class="item-total-price">
+                                Total: <%= (item.product.price * item.quantity).toFixed(2) %> PKR
+                            </p>
+
+                            <!-- Add to total cart price -->
+                            <% totalPrice += item.product.price * item.quantity; %>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+
+            <!-- Display the total cart price -->
+            <div class="cart-total">
+                <h3>Total Cart Price: <%= totalPrice.toFixed(2) %> PKR</h3>
+            </div>
+        <% } else { %>
+            <p class="empty-cart-message">Your cart is empty.</p>
+        <% } %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<div class="container my-5">
+  <h1 class="mb-4">Create New Product</h1>
+
+  <!-- Product Form -->
+  <form action="/products/create" method="POST" enctype="multipart/form-data">
+    
+    <!-- Product Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Product Name:</label>
+      <input 
+        type="text" 
+        name="name" 
+        class="form-control"
+        required
+      >
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea 
+        name="description" 
+        class="form-control"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-3">
+      <label for="price" class="form-label">Price:</label>
+      <input 
+        type="number" 
+        name="price" 
+        class="form-control"
+        required
+      >
+    </div>
+
+    <!-- Category -->
+    <div class="mb-3">
+      <label for="category" class="form-label">Category:</label>
+      <select 
+        name="category" 
+        class="form-select"
+        required
+      >
+        <% categories.forEach(category => { %>
+          <option value="<%= category._id %>"><%= category.name %></option>
+        <% }) %>
+      </select>
+    </div>
+
+    <!-- Product Picture -->
+    <div class="mb-3">
+      <label for="file" class="form-label">Product Picture:</label>
+      <input 
+        type="file" 
+        name="file" 
+        class="form-control"
+        accept="image/*"
+      >
+    </div>
+
+    <!-- Stock -->
+    <div class="mb-3">
+      <label for="stock" class="form-label">Stock:</label>
+      <input 
+        type="number" 
+        name="stock" 
+        class="form-control"
+        required
+      >
+    </div>
+
+    <!-- Submit Button -->
+    <div class="mb-3">
+      <button type="submit" class="btn btn-success">Create Product</button>
+    </div>
+  </form>
+
+  <!-- Back Link -->
+  <br>
+  <a href="/products" class="btn btn-primary">Back to Product List</a>
+</div>
+

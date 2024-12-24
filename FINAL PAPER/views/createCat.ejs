@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <h1 class="mb-4">Create New Category</h1>
+
+  <!-- Category Form -->
+  <form action="/categories/create" method="POST" enctype="multipart/form-data">
+    <!-- Category Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Category Name:</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        class="form-control"
+        required
+      >
+    </div>
+
+    <!-- Picture -->
+    <div class="mb-3">
+      <label for="file" class="form-label">Category Picture:</label>
+      <input 
+        name="file" 
+        type="file" 
+        class="form-control"
+        accept="image/*"
+      >
+    </div>
+
+    <!-- Submit Button -->
+    <div class="mb-3">
+      <button type="submit" class="btn btn-success">Create Category</button>
+    </div>
+  </form>
+
+  <!-- Back Link -->
+  <br>
+  <a href="/categories" class="btn btn-primary">Back to Categories</a>
+</div>
